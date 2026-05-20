@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us</title>
+
+<style>
+/* RESET */
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* NAVBAR */
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:#190202d7;
+    padding:15px 40px;
+}
+
+.logo{
+    color:white;
+    font-size:22px;
+    font-weight:bold;
+}
+
+.nav-links{
+    list-style:none;
+    display:flex;
+}
+
+.nav-links li{
+    margin-left:20px;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:white;
+    padding:8px 12px;
+    transition:0.3s;
+}
+
+.nav-links a:hover,
+.nav-links a.active{
+    background:#00a8e8;
+    border-radius:5px;
+}
+
+/* PAGE HEADER */
+.header{
+    text-align:center;
+    padding:60px 20px;
+    background:linear-gradient(135deg, #1c0101e5, #1c0101d8);
+    color:white;
+}
+
+.header p{
+    margin-top:10px;
+    opacity:0.9;
+}
+
+/* CONTACT SECTION */
+
+.contact-wrapper{
+    display:flex;
+    justify-content:center;
+    align-items:flex-start;
+    flex-wrap:wrap;
+    gap:30px;
+    padding:50px;
+    background:linear-gradient(135deg, #150303a4, #180404bb);
+}
+
+/* CONTACT INFO BOX */
+.info-box{
+    background:white;
+    padding:30px;
+    width:300px;
+    border-radius:12px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.1);
+}
+
+.info-box h2{
+    color:#00a8e8;
+    margin-bottom:15px;
+}
+
+.info-box p{
+    margin:10px 0;
+    color:#333;
+}
+
+/* FORM */
+.form-box{
+    background:rgba(255,255,255,0.9);
+    backdrop-filter:blur(10px);
+    padding:30px;
+    width:350px;
+    border-radius:12px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.15);
+}
+
+.form-box h2{
+    margin-bottom:15px;
+    color:#0a2540;
+}
+
+.form-box input,
+.form-box textarea{
+    width:100%;
+    padding:12px;
+    margin-top:10px;
+    border:1px solid #ddd;
+    border-radius:8px;
+    outline:none;
+}
+
+.form-box textarea{
+    resize:none;
+}
+
+.form-box button{
+    margin-top:15px;
+    width:100%;
+    padding:12px;
+    border:none;
+    background:#000a0e;
+    color:white;
+    font-size:16px;
+    border-radius:8px;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.form-box button:hover{
+    background:#0077b6;
+}
+
+/* SMALL RESPONSIVE TOUCH */
+@media(max-width:800px){
+    .contact-wrapper{
+        flex-direction:column;
+        align-items:center;
+    }
+}
+</style>
+
+</head>
+
+<body>
+    
+<!-- NAVBAR -->
+<nav class="navbar">
+    <div class="logo">Marketify</div>
+
+    <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="contact.html" >Contact</a></li>
+    </ul>
+</nav>
+
+<!-- HEADER -->
+<section class="header">
+    <h1>Get In Touch With Us</h1>
+    <p>We are here to help you grow your business online</p>
+</section>
+
+<!-- CONTACT SECTION -->
+<section class="contact-wrapper">
+
+    <!-- INFO -->
+    <div class="info-box">
+        <h2>Contact Info</h2>
+        <p>📍 Kampala, Uganda</p>
+        <p>📞 +256 700 000 000</p>
+        <p>📧 info@marketify.com</p>
+        <p>🕒 Mon - Fri: 9AM - 6PM</p>
+    </div>
+
+<!-- CONTACT FORM -->
+<div class="form-box">
+    <h2>Send Message</h2>
+
+    <form id="contactForm">
+
+        <input type="text" id="name" placeholder="Your Name">
+        <small id="nameError"></small>
+
+        <input type="email" id="email" placeholder="Your Email">
+        <small id="emailError"></small>
+
+        <input type="text" id="subject" placeholder="Subject">
+
+        <textarea id="message" rows="5" placeholder="Your Message"></textarea>
+        <small id="messageError"></small>
+
+        <button type="submit">Send Message</button>
+
+        <p id="successMessage"></p>
+
+    </form>
+</div>
+
+<script>
+const form = document.getElementById("contactForm");
+
+form.addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    // INPUT VALUES
+    let name = document.getElementById("name").value.trim();
+    let email = document.getElementById("email").value.trim();
+    let message = document.getElementById("message").value.trim();
+
+    // ERROR ELEMENTS
+    let nameError = document.getElementById("nameError");
+    let emailError = document.getElementById("emailError");
+    let messageError = document.getElementById("messageError");
+    let successMessage = document.getElementById("successMessage");
+
+    // RESET ERRORS
+    nameError.innerHTML = "";
+    emailError.innerHTML = "";
+    messageError.innerHTML = "";
+    successMessage.innerHTML = "";
+
+    let isValid = true;
+
+    // NAME VALIDATION
+    if(name === "") {
+        nameError.innerHTML = "Name is required";
+        nameError.style.color = "red";
+        isValid = false;
+    }
+
+    // EMAIL VALIDATION
+    let emailPattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/;
+
+    if(email === "") {
+        emailError.innerHTML = "Email is required";
+        emailError.style.color = "red";
+        isValid = false;
+    }
+    else if(!email.match(emailPattern)) {
+        emailError.innerHTML = "Enter a valid email";
+        emailError.style.color = "red";
+        isValid = false;
+    }
+
+    // MESSAGE VALIDATION
+    if(message === "") {
+        messageError.innerHTML = "Message cannot be empty";
+        messageError.style.color = "red";
+        isValid = false;
+    }
+
+    // SUCCESS MESSAGE
+    if(isValid) {
+        successMessage.innerHTML = "Message sent successfully!";
+        successMessage.style.color = "lime";
+
+        form.reset();
+    }
+
+});
+</script>
+
+</body>
+</html>

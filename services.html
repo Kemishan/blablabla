@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Marketing</title>
+
+    <style>
+        /* RESET */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        /* NAVBAR */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #190202d7;
+            padding: 15px 40px;
+        }
+
+        .logo {
+            color: white;
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+        }
+
+        .nav-links li {
+            margin-left: 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            padding: 8px 12px;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            background: #0b0b0b;
+            border-radius: 5px;
+        }
+
+        /* HERO */
+        .hero {
+            text-align: center;
+            padding: 70px 20px;
+            background: rgba(48, 33, 33, 0.877);
+            color: white;
+        }
+
+        .hero p {
+            margin-top: 10px;
+            color: #cfe8ff;
+        }
+
+        /* SERVICES */
+        .dm-services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 40px;
+            background: #f4f4f4;
+        }
+
+        .card {
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            transition: 0.3s;
+            text-align: center;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+        }
+
+        .card img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+        }
+
+        .card-content {
+            padding: 20px;
+        }
+
+        .card-content h2 {
+            color: #0f1010;
+            margin-bottom: 10px;
+        }
+
+        .card-content p {
+            color: #333;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header>
+    <nav class="navbar">
+        <div class="logo">Marketify</div>
+
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+    <h1>Digital Marketing Services</h1>
+    <p>Grow your business online with powerful marketing strategies.</p>
+</section>
+
+<!-- SERVICES -->
+<section class="dm-services">
+
+    <div class="card">
+        <img src="images/seo-image.jpg" alt="SEO">
+        <div class="card-content">
+            <h2>SEO Optimization</h2>
+            <p>Improve your Google ranking and increase organic traffic.</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="images/social-media.jpg" alt="Social Media">
+        <div class="card-content">
+            <h2>Social Media Marketing</h2>
+            <p>Grow your brand on Facebook, Instagram, TikTok and more.</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="images/ads.jpg" alt="Ads">
+        <div class="card-content">
+            <h2> Ads</h2>
+            <p>Run targeted ads to attract real customers and boost sales.</p>
+        </div>
+    </div>
+
+    <div class="card">
+        <img src="images/email-marketing.jpg" alt="Email Marketing">
+        <div class="card-content">
+            <h2>Email Marketing</h2>
+            <p>Send professional emails that convert leads into customers.</p>
+        </div>
+    </div>
+
+</section>
+
+</body>
+</html>

@@ -1,0 +1,436 @@
+/* ================= GENERAL ================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins', sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#f4f7fb;
+    color:#222;
+    overflow-x:hidden;
+}
+
+
+
+/* ================= NAVBAR ================= */
+
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:right;
+    padding:20px 8%;
+    background:#0f0000ea;
+    position:sticky;
+    top:0;
+    z-index:1000;
+    box-shadow:0 4px 15px rgba(0,0,0,0.2);
+}
+
+.logo{
+    color:white;
+    font-size:34px;
+    font-weight:700;
+    letter-spacing:1px;
+}
+
+.nav-links{
+    display:flex;
+    list-style:none;
+}
+
+.nav-links li{
+    margin:0 18px;
+}
+
+.nav-links a{
+    text-decoration:none;
+    color:white;
+    font-size:17px;
+    transition:0.3s;
+    position:relative;
+}
+
+/* HOVER EFFECT */
+
+.nav-links a::after{
+    content:'';
+    width:0%;
+    height:2px;
+    background:#060606;
+    position:absolute;
+    left:0;
+    bottom:-6px;
+    transition:0.4s;
+}
+
+.nav-links a:hover::after{
+    width:100%;
+}
+
+.nav-links a:hover{
+    color:#040506;
+}
+
+
+
+/* ================= BUTTON ================= */
+
+.btn{
+    background:#150606;
+    color:white;
+    padding:12px 28px;
+    border-radius:30px;
+    text-decoration:none;
+    font-weight:500;
+    transition:0.4s;
+    display:inline-block;
+}
+
+.btn:hover{
+    background:#2a2b2b;
+    transform:translateY(-3px);
+}
+
+.btn-outline{
+    border:2px solid #16010198;
+    color:#00c2ff;
+    padding:10px 25px;
+    border-radius:30px;
+    text-decoration:none;
+    margin-left:15px;
+    transition:0.4s;
+    display:inline-block;
+}
+
+.btn-outline:hover{
+    background:#00c2ff;
+    color:white;
+}
+
+
+
+/* ================= HEADER IMAGE ================= */
+
+.header-image{
+    width:100%;
+    height:520px;
+    overflow:hidden;
+    position:relative;
+}
+
+.header-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    display:block;
+}
+
+/* DARK OVERLAY */
+
+.header-image::before{
+    content:'';
+    position:absolute;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.45);
+    top:0;
+    left:0;
+}
+
+
+
+/* ================= HERO SECTION ================= */
+
+.hero{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:90px 8%;
+    gap:70px;
+    background:white;
+}
+
+
+
+/* HERO TEXT */
+
+.hero-text{
+    flex:1;
+}
+
+.small-title{
+    color:#00090c;
+    font-weight:600;
+    margin-bottom:15px;
+    letter-spacing:1px;
+}
+
+.hero-text h2{
+    font-size:58px;
+    line-height:1.2;
+    margin-bottom:25px;
+    color:#0b1f3a;
+}
+
+.hero-text p{
+    font-size:18px;
+    line-height:1.8;
+    color:#555;
+    margin-bottom:35px;
+}
+
+
+
+/* HERO BUTTONS */
+
+.hero-buttons{
+    display:flex;
+    align-items:center;
+}
+
+
+
+/* HERO IMAGE */
+
+.hero-image{
+    flex:1;
+}
+
+.hero-image img{
+    width:100%;
+    border-radius:20px;
+    box-shadow:0 12px 30px rgba(0,0,0,0.18);
+    transition:0.4s;
+}
+
+.hero-image img:hover{
+    transform:scale(1.03);
+}
+.hero{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:90px 8%;
+    gap:70px;
+    background:white;
+}
+
+
+
+/* ================= CONTENT SECTION ================= */
+
+.content{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:60px;
+
+    padding:80px 8%;
+
+    background:#ffffffbe;
+}
+
+
+
+/* ================= TEXT ================= */
+
+.content-text{
+    flex:1;
+}
+
+.little-text{
+    color:#101112;
+    font-weight:600;
+    margin-bottom:15px;
+    letter-spacing:1px;
+    font-size:18px;
+}
+
+.content-text h3{
+    font-size:58px;
+    line-height:1.2;
+    margin-bottom:25px;
+    color:#0b1f3a;
+}
+
+.content-text p{
+    font-size:18px;
+    line-height:1.8;
+    color:#555;
+    margin-bottom:35px;
+}
+
+
+
+/* ================= IMAGE ================= */
+
+.content-image{
+    flex:1;
+
+    display:flex;
+
+    justify-content:flex-start;
+}
+
+
+
+/* SMALL IMAGE */
+
+.content-image img{
+
+    width:350px;
+
+    height:450px;
+
+    object-fit:cover;
+
+    border-radius:20px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,0.15);
+
+    transition:0.4s;
+}
+
+.content-image img:hover{
+    transform:scale(1.03);
+}
+
+
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:900px){
+
+    .content{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .content-image{
+        justify-content:center;
+    }
+
+    .content-text h3{
+        font-size:40px;
+    }
+
+    .content-image img{
+        width:100%;
+        max-width:350px;
+        height:auto;
+    }
+
+}
+
+
+
+
+/* ================= FOOTER ================= */
+
+footer{
+    background:#0f0000ea;
+    color:white;
+    text-align:center;
+    padding:50px 20px;
+}
+
+footer h2{
+    font-size:32px;
+    margin-bottom:10px;
+}
+
+footer p{
+    color:#ddd;
+}
+
+.socials{
+    margin:25px 0;
+}
+
+.socials i{
+    font-size:22px;
+    margin:0 12px;
+    transition:0.3s;
+    cursor:pointer;
+}
+
+.socials i:hover{
+    color:#00c2ff;
+    transform:translateY(-5px);
+}
+
+.copy{
+    color:#bbb;
+    margin-top:15px;
+}
+
+
+
+/* ================= RESPONSIVE DESIGN ================= */
+
+@media(max-width:950px){
+
+    .hero,
+    .about{
+        flex-direction:column;
+        text-align:center;
+    }
+
+    .navbar{
+        flex-direction:column;
+        padding:20px;
+    }
+
+    .nav-links{
+        margin:20px 0;
+        flex-wrap:wrap;
+        justify-content:center;
+    }
+
+    .hero-buttons{
+        justify-content:center;
+    }
+
+    .hero-text h2{
+        font-size:42px;
+    }
+
+    .about-text h2{
+        font-size:35px;
+    }
+
+    .header-image{
+        height:350px;
+    }
+
+}
+
+
+
+@media(max-width:600px){
+
+    .hero-text h2{
+        font-size:34px;
+    }
+
+    .title h2{
+        font-size:32px;
+    }
+
+    .btn,
+    .btn-outline{
+        padding:10px 20px;
+        font-size:14px;
+    }
+
+    .navbar{
+        text-align:center;
+    }
+}
